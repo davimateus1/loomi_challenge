@@ -1,8 +1,8 @@
+import Login from "./pages/Login";
+
 function App() {
   return (
-    <div>
-      <h1>Projeto criado</h1>
-    </div>
+    <Login/>
   );
 }
 
