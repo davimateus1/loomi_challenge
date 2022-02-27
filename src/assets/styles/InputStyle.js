@@ -33,7 +33,7 @@ const Styles = (theme) => ({
   },
 
   notchedOutline: {
-    borderColor: "#558B2F",
+    borderColor: "##C7CCD8",
   },
 });
 

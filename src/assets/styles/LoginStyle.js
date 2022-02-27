@@ -36,7 +36,7 @@ export const LoginSection = styled.div`
   }
 `;
 
-export const InputsContainer = styled.form`
+export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -48,13 +48,13 @@ export const Check = styled.div`
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  margin-right: 200px;
+  margin-right: 220px;
   opacity: 1;
 
   input[type="checkbox"] {
     width: 25px;
     height: 25px;
-    border-radius: 25%;
+    border-radius: 35%;
     border: 1px solid #595f6e;
     appearance: none;
     outline: none;
@@ -76,7 +76,7 @@ export const Check = styled.div`
 `;
 
 export const Recover = styled.div`
-  margin-top: 10px;
+  margin-top: 6px;
   letter-spacing: 0px;
   color: #558b2f;
   font-weight: normal;
