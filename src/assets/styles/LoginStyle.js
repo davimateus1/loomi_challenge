@@ -27,7 +27,7 @@ export const LoginSection = styled.div`
     height: 46px;
     margin-top: 78.57px;
     font-family: Source Sans Pro;
-    font-weight: 600;
+    font-weight: 400;
     font-style: normal;
     letter-spacing: 0.8px;
     font-size: 20px;
@@ -46,9 +46,9 @@ export const InputsContainer = styled.form`
 export const Check = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  margin-left: -200px;
+  margin-right: 200px;
   opacity: 1;
 
   input[type="checkbox"] {
@@ -73,4 +73,33 @@ export const Check = styled.div`
     margin-left: 8px;
     opacity: 1;
   }
+`;
+
+export const Recover = styled.div`
+  margin-top: 10px;
+  letter-spacing: 0px;
+  color: #558b2f;
+  font-weight: normal;
+  font-family: Roboto;
+  font-size: 16px;
+  text-decoration: underline #558b2f;
+  cursor: pointer;
+`;
+
+export const Button = styled.button`
+  margin-top: 5px;
+  border-radius: 22px;
+  opacity: 1;
+  width: 330px;
+  height: 39px;
+  cursor: pointer;
+  background-color: #558b2f;
+  border: none;
+  font-family: Source Sans Pro;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.64px;
+  text-transform: capitalize;
+  color: #ffffff;
+  opacity: 1;
 `;
