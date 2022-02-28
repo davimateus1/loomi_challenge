@@ -103,3 +103,13 @@ export const Button = styled.button`
   color: #ffffff;
   opacity: 1;
 `;
+
+export const ErrorMessage = styled.p`
+  transition: all 0.5s;
+  margin-top: 5px;
+  color: red;
+  font-family: Source Sans Pro;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.8px;
+`;
