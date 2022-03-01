@@ -10,10 +10,9 @@ import {
 import Leaf from "../assets/img/Leaf.png";
 
 import OutlinedInput from "../components/Input/index.js";
-import { useState } from "react";
-import axios from "axios";
-import { BaseURL } from "../assets/utils/BaseURL";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { authenticatedUser } from "../configs/requests/auth";
 
 const Login = () => {
   const [user, setUser] = useState("");
@@ -22,31 +21,27 @@ const Login = () => {
 
   const navigate = useNavigate();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
 
-    setMessage("");
-    if (user.length === 0 || pass.length === 0) {
-      setMessage("Preencha todos os campos para continuar!");
-      return;
-    }
+      setMessage("");
+      if (user.length === 0 || pass.length === 0) {
+        setMessage("Preencha todos os campos para continuar!");
+        return;
+      }
 
-    axios({
-      method: "post",
-      url: `${BaseURL}/ps/login`,
-      data: {
+      const userAuthenticated = await authenticatedUser({
         email: user,
         password: pass,
-      },
-    })
-      .then((response) => {
-        console.log(response);
-        navigate("/dashboard");
-      })
-      .catch((error) => {
-        console.log(error);
       });
-  };
+
+      if (userAuthenticated) {
+        navigate("/dashboard");
+      }
+    },
+    [user, pass, navigate]
+  );
 
   return (
     <Container>

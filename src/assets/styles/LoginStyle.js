@@ -105,7 +105,6 @@ export const Button = styled.button`
 `;
 
 export const ErrorMessage = styled.p`
-  transition: all 0.5s;
   margin-top: 5px;
   color: red;
   font-family: Source Sans Pro;

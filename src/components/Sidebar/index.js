@@ -1,24 +1,27 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useCallback, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { userInformations } from "../../configs/requests/userInformations";
+
+import Dash from "../../assets/img/dashboard.svg";
+import Exit from "../../assets/img/exit.svg";
+import Spinner from "../Spinner";
 
 import {
   Bar,
   ButtonDash,
+  CompanyArea,
   ExitArea,
   Sidebar,
   UserInfo,
   UserPersonalInfos,
-} from "../../assets/styles/DashboardStyle";
-
-import { BaseURL } from "../../assets/utils/BaseURL";
-
-import Dash from "../../assets/img/dashboard.svg";
-import Exit from "../../assets/img/exit.svg";
-import { useNavigate } from "react-router-dom";
+} from "../../assets/styles/SidebarStyle";
 
 const SidebarComponent = () => {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
+
+  const [loading, setLoading] = useState(true);
 
   const navigate = useNavigate();
 
@@ -27,22 +30,23 @@ const SidebarComponent = () => {
     navigate("/");
   };
 
+  const getUserInformations = useCallback(async () => {
+    const userData = await userInformations();
+
+    if (userData) {
+      const { name: nameResponse, avatar: avatarResponse } = userData.data;
+      console.log();
+      setName(nameResponse);
+      setAvatar(avatarResponse);
+      localStorage.setItem("name", nameResponse);
+      localStorage.setItem("avatar", avatarResponse);
+      setLoading(false);
+    }
+  }, [setName, setAvatar]);
+
   useEffect(() => {
-    axios({
-      method: "get",
-      url: `${BaseURL}/ps/me`,
-    })
-      .then((response) => {
-        const res = response.data.data;
-        setName(res.name);
-        setAvatar(res.avatar);
-        localStorage.setItem("name", name);
-        localStorage.setItem("avatar", avatar);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [name, avatar]);
+    getUserInformations();
+  }, [getUserInformations]);
 
   return (
     <Sidebar>
@@ -54,13 +58,23 @@ const SidebarComponent = () => {
       <UserInfo>
         <h1>Programador</h1>
         <UserPersonalInfos>
-          {/* <img src={avatar} alt="User avatar" /> */}
-          <p>{name}</p>
+          {loading ? (
+            <Spinner size={10} />
+          ) : (
+            <>
+              <img src={avatar} alt="User avatar" />
+              <p>{name}</p>
+            </>
+          )}
         </UserPersonalInfos>
         <ExitArea onClick={ExitDashboard}>
           <img src={Exit} alt="Sair" />
           <p>Sair</p>
         </ExitArea>
+        <CompanyArea>
+          <p>Uma plataforma</p>
+          <h3>New Wave</h3>
+        </CompanyArea>
       </UserInfo>
     </Sidebar>
   );
