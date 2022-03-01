@@ -5,8 +5,8 @@ const Styles = (theme) => ({
   },
   textField: {
     marginTop: 22,
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    marginLeft: theme.spacing(4),
+    marginRight: theme.spacing(4),
   },
 
   cssLabel: {

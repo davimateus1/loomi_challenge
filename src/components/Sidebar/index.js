@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -27,6 +29,8 @@ const SidebarComponent = () => {
 
   const ExitDashboard = () => {
     localStorage.clear();
+    Cookies.remove('token');
+    Cookies.remove('refreshToken');
     navigate("/");
   };
 

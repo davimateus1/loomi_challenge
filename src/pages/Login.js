@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 import {
   Container,
   LoginSection,
@@ -37,7 +39,9 @@ const Login = () => {
       });
 
       if (userAuthenticated) {
-        navigate("/dashboard");
+       Cookies.set('token', userAuthenticated.token);
+       Cookies.set('refreshToken', userAuthenticated.refreshToken);
+       navigate('/dashboard');
       }
     },
     [user, pass, navigate]
