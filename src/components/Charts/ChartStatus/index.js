@@ -48,7 +48,7 @@ const ChartStatus = () => {
         },
       ],
     },
-    series: [delivery, late, lateRisk],
+    series: [delivery, lateRisk, late],
   };
 
   return (

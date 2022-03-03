@@ -3,27 +3,42 @@ import Chart from "react-apexcharts";
 import { deliveryProblems } from "../../../configs/requests/products";
 
 const ChartProblems = () => {
-  const [array, setArray] = useState([]);
-  const [array2, setArray2] = useState([]);
+
+  const [quantityFirst, setQuantityFirst] = useState();
+  const [quantitySecond, setQuantitySecond] = useState();
+
+  const [labelFirst, setLabelFirst] = useState();
+  const [labelSecond, setLabelSecond] = useState();
 
   const getDeliveryProblems = async () => {
     const userProblems = await deliveryProblems();
 
     if (userProblems) {
-      setArray(userProblems[0]);
-      const { problem, quantity } = array;
-      console.log(problem, quantity);
+      const [problemOne, ,problemTwo] = userProblems;
+
+      setQuantityFirst(problemOne.quantity)
+      setQuantitySecond(problemTwo.quantity)
+      
+      setLabelFirst(problemOne.problem)
+      setLabelSecond(problemTwo.problem)
     }
   };
 
   useEffect(() => {
-   
+    getDeliveryProblems();
   }, [])
 
+
   const data = {
+
     options: {
       colors: ["#004C6D", "#9DC6E0"],
-      labels: ["fodase", "fodase2"],
+      labels: [`<strong>${quantityFirst}</strong>
+      Casos de 
+      <br/> ${labelFirst} (${quantityFirst}%)`,
+      `<strong>${quantitySecond}</strong>
+      Casos de 
+      <br/> ${labelSecond} (${quantitySecond}%)`],
       theme: {
         monochrome: {
           enabled: false,
@@ -43,11 +58,11 @@ const ChartProblems = () => {
         },
       ],
     },
-    series: [100, 50],
+    series: [quantityFirst, quantitySecond],
   };
 
   return (
-    <Chart options={data.options} series={data.series} type="pie" width={290} />
+    <Chart options={data.options} series={data.series} type="pie" width={365} />
   );
 };
 

@@ -9,7 +9,7 @@ import {
   Button,
   ErrorMessage,
 } from "../assets/styles/LoginStyle";
-import Leaf from "../assets/img/Leaf.png";
+import Leaf from "../assets/img/leaf.png";
 
 import OutlinedInput from "../components/Input/index.js";
 import { useCallback, useState } from "react";

@@ -34,16 +34,16 @@ const DashboardArea = () => {
       color = null,
       marginTop = null,
     }) => [
-      {
-        label,
-        color,
-        icon,
-        showPercentage,
-        value,
-        text,
-        marginTop,
-      },
-    ],
+        {
+          label,
+          color,
+          icon,
+          showPercentage,
+          value,
+          text,
+          marginTop,
+        },
+      ],
     []
   );
 
@@ -159,22 +159,25 @@ const DashboardArea = () => {
             ))
           )}
         </SmallCardArea>
-        {loading ? (
-          <Spinner />
-        ) : (
-          <GraphicStatus>
-            <ChartArea>
-              <h1>Status das entregas</h1>
-              <ChartStatus />
-            </ChartArea>
-            <ChartArea>
-              <h1>Problemas na entrega</h1>
-              <ChartProblems />
-            </ChartArea>
-          </GraphicStatus>
-        )}
+        <GraphicStatus>
+
+          {loading ? (
+            <Spinner />
+          ) : (
+            <>
+              < ChartArea >
+                <h1>Status das entregas</h1>
+                <ChartStatus />
+              </ChartArea>
+              <ChartArea>
+                <h1>Problemas na entrega</h1>
+                <ChartProblems />
+              </ChartArea>
+            </>
+          )}
+        </GraphicStatus>
       </DashboardContentPlate>
-    </DashboardContainer>
+    </DashboardContainer >
   );
 };
 
