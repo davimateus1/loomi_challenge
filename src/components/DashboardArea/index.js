@@ -1,6 +1,8 @@
 import {
+  ChartArea,
   DashboardContainer,
   DashboardContentPlate,
+  GraphicStatus,
   SmallCardArea,
 } from "../../assets/styles/DashboardStyle";
 
@@ -14,11 +16,24 @@ import Finished from "../../assets/img/finished.svg";
 
 import { useCallback, useEffect, useState } from "react";
 import { deliveryAvg, totalProducts } from "../../configs/requests/products";
+import ChartStatus from "../Charts/ChartStatus";
+import Spinner from "../Spinner";
+import ChartProblems from "../Charts/ChartProblems";
 
 const DashboardArea = () => {
   const [cards, setCards] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const createCard = useCallback(({ icon = null, value, text, label = "produtos", showPercentage = false, color = null }) => [
+  const createCard = useCallback(
+    ({
+      icon = null,
+      value,
+      text,
+      label = "produtos",
+      showPercentage = false,
+      color = null,
+      marginTop = null,
+    }) => [
       {
         label,
         color,
@@ -26,6 +41,7 @@ const DashboardArea = () => {
         showPercentage,
         value,
         text,
+        marginTop,
       },
     ],
     []
@@ -43,6 +59,7 @@ const DashboardArea = () => {
     const cardTotal = createCard({
       value: delivered + late + lateRisk,
       text: "Total de produtos",
+      marginTop: 55,
     });
 
     const cardDelivered = createCard({
@@ -50,6 +67,7 @@ const DashboardArea = () => {
       text: "Produtos com atraso na entrega",
       color: "#E8596C",
       showPercentage: true,
+      marginTop: 37,
     });
 
     const cardLate = createCard({
@@ -57,6 +75,7 @@ const DashboardArea = () => {
       text: "Produtos com risco de atraso",
       color: "#EFB15D",
       showPercentage: true,
+      marginTop: 37,
     });
 
     const cardLateRisk = createCard({
@@ -64,13 +83,15 @@ const DashboardArea = () => {
       text: "Produtos entregues",
       color: "#558B2F",
       showPercentage: true,
+      marginTop: 55,
     });
-    
+
     const cardFinished = createCard({
       icon: Finished,
       value: finished.value,
       text: finished.label,
       label: finished.unity,
+      marginTop: 33,
     });
 
     const cardDelivery = createCard({
@@ -78,6 +99,7 @@ const DashboardArea = () => {
       value: delivery.value,
       text: delivery.label,
       label: delivery.unity,
+      marginTop: 33,
     });
 
     const cardCheck = createCard({
@@ -85,6 +107,7 @@ const DashboardArea = () => {
       value: distance.value,
       text: distance.label,
       label: distance.unity,
+      marginTop: 16,
     });
 
     const cardDistance = createCard({
@@ -92,6 +115,7 @@ const DashboardArea = () => {
       value: check.value,
       text: check.label,
       label: check.unity,
+      marginTop: 15,
     });
 
     const cardsToRender = [
@@ -106,6 +130,7 @@ const DashboardArea = () => {
     ];
 
     setCards(cardsToRender);
+    setLoading(false);
   }, [createCard]);
 
   useEffect(() => {
@@ -117,18 +142,37 @@ const DashboardArea = () => {
       <DashboardContentPlate>
         <Header />
         <SmallCardArea>
-          {cards.map((item) => (
-            <SmallCard
-              key={item.text}
-              color={item.color}
-              icon={item.icon}
-              text={item.text}
-              value={item.value}
-              label={item.label}
-              showPercentage={item.showPercentage}
-            />
-          ))}
+          {loading ? (
+            <Spinner />
+          ) : (
+            cards.map((item) => (
+              <SmallCard
+                marginTop={item.marginTop}
+                key={item.text}
+                color={item.color}
+                icon={item.icon}
+                text={item.text}
+                value={item.value}
+                label={item.label}
+                showPercentage={item.showPercentage}
+              />
+            ))
+          )}
         </SmallCardArea>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <GraphicStatus>
+            <ChartArea>
+              <h1>Status das entregas</h1>
+              <ChartStatus />
+            </ChartArea>
+            <ChartArea>
+              <h1>Problemas na entrega</h1>
+              <ChartProblems />
+            </ChartArea>
+          </GraphicStatus>
+        )}
       </DashboardContentPlate>
     </DashboardContainer>
   );

@@ -17,3 +17,12 @@ export const deliveryAvg = async () => {
     console.log(err);
   }
 };
+
+export const deliveryProblems = async () => {
+  try {
+    const response = await api.get("/ps/delivery-problems");
+    return response.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

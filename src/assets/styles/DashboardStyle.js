@@ -94,10 +94,11 @@ export const SmallCardArea = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 15px;
 `;
 
 export const Card = styled.div`
-  margin-top: 28px;
+  margin-top: 13px;
   margin-left: 11px;
   width: 183px;
   height: 132px;
@@ -135,6 +136,35 @@ export const Card = styled.div`
     color: #191b1d;
     font-weight: 600;
   }
+
+  @media (max-width: 1280px) {
+    margin-left: 5px;
+    width: 143px;
+    height: 132px;
+
+    h1 {
+      margin-left: 15px;
+      margin-top: -13px;
+      text-align: left;
+      font-family: Source Sans Pro;
+      font-size: 11px;
+    }
+
+    img {
+      width: 24px;
+      height: 26px;
+      position: relative;
+      top: -13px;
+      left: 49.5px;
+    }
+
+    span {
+      font-size: 20px;
+      letter-spacing: 1.28px;
+      color: #191b1d;
+      font-weight: 600;
+    }
+  }
 `;
 
 export const EmptyIcon = styled.div`
@@ -142,25 +172,28 @@ export const EmptyIcon = styled.div`
 `;
 
 export const CardContent = styled.div`
-  margin-top: 45px;
-  margin-left: 15px;
-  width: 70%;
-  height: auto;
+  margin-top: ${(props) => (props.marginTop ? `${props.marginTop}px` : "")};
   display: flex;
-  justify-content: space-between;
+  margin-left: 15px;
   align-items: baseline;
 `;
 
 export const CardLabel = styled.p`
   margin: 0;
+  margin-left: 10px;
   font-family: Source Sans Pro;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.48px;
   color: ${(props) => (props.fontColor ? props.fontColor : "#191b1d")};
+
+  @media (max-width: 1280px) {
+    margin-left: 5px;
+  }
 `;
 
 export const Percentage = styled.p`
+  padding-left: 15px;
   margin: 0;
   font-family: Helvetica;
   font-style: normal;
@@ -168,4 +201,35 @@ export const Percentage = styled.p`
   letter-spacing: 0px;
   color: ${(props) => (props.fontColor ? props.fontColor : "#191b1d")};
   opacity: 1;
+
+  @media (max-width: 1280px) {
+    padding-left: 5px;
+  }
+`;
+
+export const GraphicStatus = styled.div`
+  margin-left: 50px;
+  width: 373px;
+  flex-direction: column;
+
+  @media (max-width: 1280px) {
+    margin-left: 10px;
+  }
+`;
+
+export const ChartArea = styled.div`
+  h1 {
+    padding-top: 10px;
+    margin-left: 15px;
+    font-family: Source Sans Pro;
+    font-weight: normal 600;
+    font-size: 18px;
+    letter-spacing: 0.72px;
+    color: #191b1d;
+  }
+  margin-top: -5px;
+  width: 373px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 10px;
 `;
