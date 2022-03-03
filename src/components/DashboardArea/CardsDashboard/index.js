@@ -12,9 +12,9 @@ const SmallCard = ({ icon, value, text, label, showPercentage, color }) => {
       {icon !== null ? <img src={icon} alt={text} /> : <EmptyIcon />}
       <h1>{text}</h1>
       <CardContent>
-        <span>{value}</span>
-        <CardLabel>{label}</CardLabel>
-        {showPercentage ? <Percentage fontColor={color}> {value}% </Percentage> : ""}
+        <span style={{ color: color}}>{value}</span>
+        <CardLabel fontColor={color}>{label}</CardLabel>
+        {showPercentage ? <Percentage> {value}% </Percentage> : ""}
       </CardContent>
     </Card>
   );

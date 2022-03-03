@@ -6,7 +6,7 @@ import {
   DashboardHeaderInfos,
   ProductInfo,
 } from "../../../assets/styles/DashboardStyle";
-import { totalProducts } from "../../../configs/requests/totalProducts";
+import { totalProducts } from "../../../configs/requests/products";
 import Spinner from "../../Spinner";
 
 const Header = () => {

@@ -39,7 +39,6 @@ const SidebarComponent = () => {
 
     if (userData) {
       const { name: nameResponse, avatar: avatarResponse } = userData.data;
-      console.log();
       setName(nameResponse);
       setAvatar(avatarResponse);
       localStorage.setItem("name", nameResponse);

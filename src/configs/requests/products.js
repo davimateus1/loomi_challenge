@@ -8,3 +8,12 @@ export const totalProducts = async () => {
     console.log(err);
   }
 };
+
+export const deliveryAvg = async () => {
+  try {
+    const response = await api.get("/ps/delivery-avgs");
+    return response.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

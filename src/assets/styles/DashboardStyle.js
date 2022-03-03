@@ -97,7 +97,8 @@ export const SmallCardArea = styled.div`
 `;
 
 export const Card = styled.div`
-  border: 1px solid red;
+  margin-top: 28px;
+  margin-left: 11px;
   width: 183px;
   height: 132px;
   background-color: #ffffff;
@@ -156,7 +157,7 @@ export const CardLabel = styled.p`
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.48px;
-  color: #191b1d;
+  color: ${(props) => (props.fontColor ? props.fontColor : "#191b1d")};
 `;
 
 export const Percentage = styled.p`
@@ -165,6 +166,6 @@ export const Percentage = styled.p`
   font-style: normal;
   font-size: 16px;
   letter-spacing: 0px;
-  color: ${(props) => props.fontColor ? props.fontColor : '#191b1d'};
+  color: ${(props) => (props.fontColor ? props.fontColor : "#191b1d")};
   opacity: 1;
 `;
