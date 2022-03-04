@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route element={<Login />} exact path="/" />

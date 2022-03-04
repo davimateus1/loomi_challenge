@@ -18,14 +18,12 @@ const ChartByPhase = () => {
       setRegular(userAvaliation.regular);
       setBad(userAvaliation.bad);
       setTerrible(userAvaliation.terrible);
-
-      console.log(excellent, good, regular, bad, terrible);
     }
   };
 
   useEffect(() => {
     getTotalAvaliation();
-  });
+  }, []);
 
   const data = {
     options: {

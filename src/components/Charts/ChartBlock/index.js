@@ -14,7 +14,6 @@ const ChartBlock = () => {
     const userProblems = await deliveryProblems();
 
     if (userProblems) {
-      console.log(userProblems);
       const [problemOne, problemTwo, problemThree] = userProblems;
 
       setQuantityFirst(problemOne.quantity);
@@ -29,7 +28,7 @@ const ChartBlock = () => {
 
   useEffect(() => {
     getDeliveryProblems();
-  });
+  }, []);
 
   const series = [
     {

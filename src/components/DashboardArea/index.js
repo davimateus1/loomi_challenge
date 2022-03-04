@@ -3,10 +3,13 @@ import {
   BarChartArea,
   ChartArea,
   ChartsPie,
+  ContentInformations,
   DashboardContainer,
   DashboardContentPlate,
   GraphicStatus,
   SmallCardArea,
+  TableArea,
+  TotalCharts,
 } from "../../assets/styles/DashboardStyle";
 
 import SmallCard from "./CardsDashboard";
@@ -24,6 +27,7 @@ import Spinner from "../Spinner";
 import ChartProblems from "../Charts/ChartProblems";
 import ChartByPhase from "../Charts/ChartByPhase";
 import ChartBlock from "../Charts/ChartBlock";
+import TableDashboard from "./TableDashboard";
 
 const DashboardArea = () => {
   const [cards, setCards] = useState([]);
@@ -164,50 +168,80 @@ const DashboardArea = () => {
             ))
           )}
         </SmallCardArea>
-        <ChartsPie>
-          <GraphicStatus>
-            <ChartArea>
+        <ContentInformations>
+          <TotalCharts>
+            <ChartsPie>
+              <GraphicStatus>
+                <ChartArea>
+                  {loading ? (
+                    <Spinner />
+                  ) : (
+                    <>
+                      <h1>Status das entregas</h1>
+                      <ChartStatus />
+                    </>
+                  )}
+                </ChartArea>
+                <ChartArea>
+                  {loading ? (
+                    <Spinner />
+                  ) : (
+                    <>
+                      <h1>Problemas na entrega</h1>
+                      <ChartProblems />
+                    </>
+                  )}
+                </ChartArea>
+              </GraphicStatus>
+              <AreaChartByPhase
+                style={
+                  loading
+                    ? { justifyContent: "center" }
+                    : { justifyContent: "flex-start" }
+                }
+              >
+                {loading ? (
+                  <Spinner />
+                ) : (
+                  <>
+                    <h1>Avaliação de entregas</h1>
+                    <ChartByPhase />
+                  </>
+                )}
+              </AreaChartByPhase>
+            </ChartsPie>
+            <BarChartArea>
               {loading ? (
                 <Spinner />
               ) : (
                 <>
-                  <h1>Status das entregas</h1>
-                  <ChartStatus />
+                  <h1>Motivo de bloqueio nas entregas</h1>
+                  <ChartBlock />
                 </>
               )}
-            </ChartArea>
-            <ChartArea>
-              {loading ? (
-                <Spinner />
-              ) : (
-                <>
-                  <h1>Problemas na entrega</h1>
-                  <ChartProblems />
-                </>
-              )}
-            </ChartArea>
-          </GraphicStatus>
-          <AreaChartByPhase>
+            </BarChartArea>
+          </TotalCharts>
+          <TableArea
+            style={
+              loading
+                ? {
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                  }
+                : { justifyContent: "flex-start" }
+            }
+          >
             {loading ? (
               <Spinner />
             ) : (
               <>
-                <h1>Avaliação de entregas</h1>
-                <ChartByPhase />
+                <TableDashboard />
               </>
             )}
-          </AreaChartByPhase>
-        </ChartsPie>
-        <BarChartArea>
-          {loading ? (
-            <Spinner />
-          ) : (
-            <>
-              <h1>Motivo de bloqueio nas entregas</h1>
-              <ChartBlock />
-            </>
-          )}
-        </BarChartArea>
+          </TableArea>
+        </ContentInformations>
       </DashboardContentPlate>
     </DashboardContainer>
   );

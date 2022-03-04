@@ -35,3 +35,12 @@ export const deliveryAvaliation = async () => {
     console.log(err);
   }
 };
+
+export const StatusDeliveries = async () => {
+  try {
+    const response = await api.get("/ps/deliveries");
+    return response.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

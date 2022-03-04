@@ -42,9 +42,11 @@ img {
     letter-spacing: 0.64px;
     text-transform: capitalize;
 }
-@media (max-width: 1280px) {
+@media (min-width: 1280px) and (max-width: 1440px){
     width: 165px;
   }
+  
+}
 `;
 
 export const Bar = styled.div`
@@ -59,8 +61,8 @@ export const Bar = styled.div`
   border: 1px solid #000000;
   opacity: 0.1;
 
-  @media (max-width: 1280px) {
-    margin-top: 155px;
+  @media (min-width: 1280px) and (max-width: 1440px){
+    margin-top: 195px;
     width: 150px;
   }
 `;
@@ -79,8 +81,8 @@ export const UserInfo = styled.div`
     opacity: 1;
   }
 
-  @media (max-width: 1280px) {
-   width: 150px;
+  @media (min-width: 1280px) and (max-width: 1440px){
+    width: 150px;
   }
 `;
 
