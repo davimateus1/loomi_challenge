@@ -24,6 +24,7 @@ const ChartStatus = () => {
   const data = {
     options: {
       colors: ["#47B27C", "#FFCA83", "#FF7285"],
+      position: 'bottom',
       labels: [
         `<strong>${delivery}</strong> no prazo (${delivery}%)`,
         `<strong>${lateRisk}</strong> em risco (${lateRisk}%)`,

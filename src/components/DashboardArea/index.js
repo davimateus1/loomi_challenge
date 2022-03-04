@@ -1,5 +1,8 @@
 import {
+  AreaChartByPhase,
+  BarChartArea,
   ChartArea,
+  ChartsPie,
   DashboardContainer,
   DashboardContentPlate,
   GraphicStatus,
@@ -19,6 +22,8 @@ import { deliveryAvg, totalProducts } from "../../configs/requests/products";
 import ChartStatus from "../Charts/ChartStatus";
 import Spinner from "../Spinner";
 import ChartProblems from "../Charts/ChartProblems";
+import ChartByPhase from "../Charts/ChartByPhase";
+import ChartBlock from "../Charts/ChartBlock";
 
 const DashboardArea = () => {
   const [cards, setCards] = useState([]);
@@ -34,16 +39,16 @@ const DashboardArea = () => {
       color = null,
       marginTop = null,
     }) => [
-        {
-          label,
-          color,
-          icon,
-          showPercentage,
-          value,
-          text,
-          marginTop,
-        },
-      ],
+      {
+        label,
+        color,
+        icon,
+        showPercentage,
+        value,
+        text,
+        marginTop,
+      },
+    ],
     []
   );
 
@@ -159,25 +164,52 @@ const DashboardArea = () => {
             ))
           )}
         </SmallCardArea>
-        <GraphicStatus>
-
+        <ChartsPie>
+          <GraphicStatus>
+            <ChartArea>
+              {loading ? (
+                <Spinner />
+              ) : (
+                <>
+                  <h1>Status das entregas</h1>
+                  <ChartStatus />
+                </>
+              )}
+            </ChartArea>
+            <ChartArea>
+              {loading ? (
+                <Spinner />
+              ) : (
+                <>
+                  <h1>Problemas na entrega</h1>
+                  <ChartProblems />
+                </>
+              )}
+            </ChartArea>
+          </GraphicStatus>
+          <AreaChartByPhase>
+            {loading ? (
+              <Spinner />
+            ) : (
+              <>
+                <h1>Avaliação de entregas</h1>
+                <ChartByPhase />
+              </>
+            )}
+          </AreaChartByPhase>
+        </ChartsPie>
+        <BarChartArea>
           {loading ? (
             <Spinner />
           ) : (
             <>
-              < ChartArea >
-                <h1>Status das entregas</h1>
-                <ChartStatus />
-              </ChartArea>
-              <ChartArea>
-                <h1>Problemas na entrega</h1>
-                <ChartProblems />
-              </ChartArea>
+              <h1>Motivo de bloqueio nas entregas</h1>
+              <ChartBlock />
             </>
           )}
-        </GraphicStatus>
+        </BarChartArea>
       </DashboardContentPlate>
-    </DashboardContainer >
+    </DashboardContainer>
   );
 };
 

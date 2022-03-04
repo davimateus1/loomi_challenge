@@ -26,3 +26,12 @@ export const deliveryProblems = async () => {
     console.log(err);
   }
 };
+
+export const deliveryAvaliation = async () => {
+  try {
+    const response = await api.get("/ps/rating");
+    return response.data.data;
+  } catch (err) {
+    console.log(err);
+  }
+};

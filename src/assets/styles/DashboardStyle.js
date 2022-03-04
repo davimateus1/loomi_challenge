@@ -32,7 +32,7 @@ export const DashboardHeaderInfos = styled.div`
 
   h1 {
     margin-left: 30px;
-    margin-top: 40px;
+    margin-top: 20px;
     text-align: left;
     font-family: Source Sans Pro;
     font-weight: normal bold;
@@ -44,7 +44,7 @@ export const DashboardHeaderInfos = styled.div`
   }
 
   h3 {
-    margin-top: 32px;
+    margin-top: 12px;
     text-align: left;
     font-family: Source Sans Pro;
     font-weight: normal 600;
@@ -66,7 +66,7 @@ export const DashboardHeaderInfos = styled.div`
 export const Bar = styled.div`
   margin-left: 30px;
   margin-right: 30px;
-  margin-top: 40px;
+  margin-top: 23px;
   height: 29px;
   border: 1px solid #7e8699;
   opacity: 1;
@@ -77,7 +77,6 @@ export const DashboardHeaderBar = styled.div`
   border: 1px solid #c7ccd8;
   opacity: 1;
   margin-left: 30px;
-  margin-top: 20px;
 
   @media (max-width: 1280px) {
     width: 1040px;
@@ -233,3 +232,51 @@ export const ChartArea = styled.div`
   background: #ffffff;
   border-radius: 10px;
 `;
+
+export const ChartsPie = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const AreaChartByPhase = styled.div`
+  border-radius: 10px;
+  width: 383px;
+  height: 407px;
+  background-color: #ffffff;
+  margin-top: 8px;
+  margin-left: 8px;
+
+  h1 {
+    display: flex;
+    margin-left: 15px;
+    margin-bottom: 50px;
+    font-family: Source Sans Pro
+    font-weight: normal 600;
+    font-size: 18px;
+    letter-spacing: 0.72px;
+    color: #191b1d;
+    opacity: 1;
+  }
+`;
+
+export const BarChartArea = styled.div`
+  margin-top: 8px;
+  margin-left: 50px;
+  background-color: #ffffff;
+  width: 765px;
+  height: 250px;
+  border-radius: 10px;
+  
+  h1 {
+    padding-top: 10px;
+    display: flex;
+    margin-left: 15px;
+    font-family: Source Sans Pro
+    font-weight: normal 600;
+    font-size: 18px;
+    letter-spacing: 0.72px;
+    color: #191b1d;
+    opacity: 1;
+  }
+
+`
