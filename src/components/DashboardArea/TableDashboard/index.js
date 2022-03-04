@@ -84,7 +84,7 @@ const TableDashboard = () => {
             };
 
             return (
-              <TableRow BackgroundColor={getColor()}>
+              <TableRow BackgroundColor={getColor()} key={item.id}>
                 <TableColumn width="10%" FontWeight="normal">
                   {item.id}
                 </TableColumn>

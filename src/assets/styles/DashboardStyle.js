@@ -82,8 +82,8 @@ export const DashboardHeaderBar = styled.div`
   opacity: 1;
   margin-left: 30px;
 
-  @media (max-width: 1280px) {
-    width: 1040px;
+  @media (min-width: 1280px) and (max-width: 1440px) {
+    width: 0px;
   }
 `;
 
@@ -143,15 +143,15 @@ export const Card = styled.div`
   }
 
   @media (min-width: 1280px) and (max-width: 1440px) {
-    width: 120px;
-    height: 100px;
+    width: 140px;
+    height: 80px;
 
     h1 {
       margin-left: 15px;
-      margin-top: -18px;
+      margin-top: -15px;
       text-align: left;
       font-family: Source Sans Pro;
-      font-size: 10px;
+      font-size: 9px;
     }
 
     img {
@@ -163,6 +163,7 @@ export const Card = styled.div`
     }
 
     span {
+      margin-top: -20px;
       font-size: 16px;
       letter-spacing: 1.28px;
       color: #191b1d;
@@ -193,6 +194,7 @@ export const CardLabel = styled.p`
 
   @media (min-width: 1280px) and (max-width: 1440px) {
     margin-left: 1px;
+    margin-top: -10px;
   }
 `;
 
@@ -219,6 +221,7 @@ export const GraphicStatus = styled.div`
   @media (min-width: 1280px) and (max-width: 1440px) {
     margin-left: 10px;
     width: 350px;
+    margin-top: -50px;
   }
 `;
 
@@ -247,7 +250,18 @@ export const ChartArea = styled.div`
 
   @media (min-width: 1280px) and (max-width: 1440px) {
     width: 330px;
-    height: 190px;
+    height: 171px;
+
+    h1 {
+      width: 98%;
+      padding-top: 0px;
+      margin-left: 15px;
+      font-family: Source Sans Pro;
+      font-weight: normal 600;
+      font-size: 15px;
+      letter-spacing: 0.72px;
+      color: #191b1d;
+    }
   }
 `;
 
@@ -284,8 +298,13 @@ export const AreaChartByPhase = styled.div`
 
   @media (min-width: 1280px) and (max-width: 1440px) {
     width: 383px;
-    height: 390px;
+    height: 330px;
+    margin-top: -40px;
     margin-left: -10px;
+
+    h1 {
+    margin-bottom: 30px;
+  }
   }
 `;
 
@@ -312,6 +331,11 @@ export const BarChartArea = styled.div`
     letter-spacing: 0.72px;
     color: #191b1d;
     opacity: 1;
+  }
+
+  @media (min-width: 1280px) and (max-width: 1440px) {
+    margin-top: 0px;
+    margin-left: 50px;
   }
 `;
 
@@ -346,8 +370,8 @@ export const TableArea = styled.div`
   border-radius: 10px;
 
   @media (min-width: 1280px) and (max-width: 1440px) {
-    width: 30%;
-    margin-right: 100px;
+    width: 35%;
+    margin-right: 40px;
   }
 `;
 
