@@ -1,70 +1,78 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <img alt="move.it" title="move.it" src="https://user-images.githubusercontent.com/66326378/156859684-acc8b38b-13b7-4bcd-aa39-3fbbabe23ecc.png" height=140px weight=140px />
+</h1>
+<h3 align="center">Loomi Challenge</h3>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<br><br>
 
-## Available Scripts
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-video-do-projeto">Video do Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-como-executar">Como executar</a>
+</p>
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+<h2>🖥️ Tela de Login: </h2>
+<p align="center">
+  <img alt="Happy" src="https://user-images.githubusercontent.com/66326378/156860744-b59a1f21-ea28-46c9-a2a7-5cb02d7bbd10.png" width="100%">
+</p>
+<h2>📈 Tela do Dashboard: </h2>
+<p align="center">
+  <img alt="Happy" src="https://user-images.githubusercontent.com/66326378/156860709-30d6e5c3-5959-40db-add9-40ed47674e54.png" width="100%">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Tecnologias
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-### `npm test`
+- [ReactJS](https://reactjs.org)
+- [Styled Components](https://www.typescriptlang.org/)
+- [JS-Cookie](https://www.npmjs.com/package/js-cookie)
+- [Apexcharts](https://apexcharts.com)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [MaterialUI](https://mui.com/pt/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## 💻 Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O projeto consiste em um Dashboard que exibe dados de pedidos, juntamente com uma tela de login que guarda informações do usuário via cookies. Os dados do dashboard são consumidos via API com Axios, mostrado em tela como cards, tabelas e gráficos utilizando o Apexcharts para exibição, Componentes com MaterialUI e o Styled Components para estilização.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Alguns pontos fortes desse projeto são:
 
-### `npm run eject`
+<ul> 
+ <li>Estruturação de um projeto utilizando linters e formatters</li> 
+ <li>Utilização de React Hooks</li> 
+ <li>Gerenciamento de dados utilizando contextos</li>
+ <li>Consumo de API</li>
+ <li>Utilização de bibliotecas de componentes</li>
+ <li>Criação e utilização de temas e arquivos de estilo</li> 
+ <li>Implementação de um fluxo de autenticação armazenando o token nos Cookies e armazenando informações do usuário no Local Storage</li>
+</ul>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🎥 Video do Projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Você pode ver o video do projeto através [desse link](https://drive.google.com/file/d/1u2_CO_IdgikFD1hxSxwCB7i4eNtwzsBk/view?usp=sharing).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br>
 
-## Learn More
+## 🚀 Como executar
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Clone o repositório
+- Instale o [Node.js](https://nodejs.org/en/download/)
+- Abra o projeto com algum editor de texto, recomendo o VSCode
+- Inicie o servidor com `npm start` no terminal
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Agora você pode acessar [`localhost:3000`](http://localhost:3000) no seu navegador e testar todas as funcionalidades.
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h3 align="center">Feito por Davi Mateus </h3>
