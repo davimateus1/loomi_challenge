@@ -61,7 +61,7 @@ export const Bar = styled.div`
   border: 1px solid #000000;
   opacity: 0.1;
 
-  @media (min-width: 1280px) and (max-width: 1440px){
+  @media (min-width: 1280px) and (max-width: 1440px) {
     margin-top: 195px;
     width: 150px;
   }
@@ -81,7 +81,7 @@ export const UserInfo = styled.div`
     opacity: 1;
   }
 
-  @media (min-width: 1280px) and (max-width: 1440px){
+  @media (min-width: 1280px) and (max-width: 1440px) {
     width: 150px;
   }
 `;

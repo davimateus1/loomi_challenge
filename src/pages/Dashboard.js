@@ -17,8 +17,8 @@ const Dashboard = () => {
   }, [cookie]);
 
   useEffect(() => {
-    if(!isAuth()){
-      navigate('/');
+    if (!isAuth()) {
+      navigate("/");
     }
   });
 

@@ -29,8 +29,8 @@ const SidebarComponent = () => {
 
   const ExitDashboard = () => {
     localStorage.clear();
-    Cookies.remove('token');
-    Cookies.remove('refreshToken');
+    Cookies.remove("token");
+    Cookies.remove("refreshToken");
     navigate("/");
   };
 
