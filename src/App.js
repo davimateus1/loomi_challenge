@@ -10,6 +10,6 @@ const App = () => {
       <Route element={<Dashboard />} exact path="/dashboard" />
     </Routes>
   );
-}
+};
 
 export default App;

@@ -41,17 +41,13 @@ const ChartBlock = () => {
     options: {
       colors: ["#004C6D"],
       xaxis: {
-        categories: [
-          'Falta de dados de remetente',
-          labelSecond,
-          labelThird,
-        ],
+        categories: ["Falta de dados de remetente", labelSecond, labelThird],
       },
       plotOptions: {
         bar: {
           borderRadius: 10,
-          columnWidth: '50%',
-        }
+          columnWidth: "50%",
+        },
       },
     },
   };
