@@ -10,8 +10,6 @@ const Dashboard = () => {
   const cookie = Cookies.get("token");
   const navigate = useNavigate();
 
-  console.log(cookie);
-
   const isAuth = useCallback(() => {
     return cookie !== undefined;
   }, [cookie]);
